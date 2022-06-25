@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% include 'navbar.html' %}
+<br>
+<br>
+<div class="row">
+   
+   
+    <div class="col-md-3">
+        
+<div class="card" style="width: 18rem;">
+    <div class="card-header">
+    
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Anxiety</li>
+      <li class="list-group-item">Depression</li>
+      <li class="list-group-item">Addiction</li>
+      <li class="list-group-item">Domestic Violence</li>
+    </ul>
+  </div>
+    </div>
+    <div class=" col-md-9">  
+
+<div class="display-all-projects d-flex justify-content-center pt-4">
+    {% for post in all_posts %}
+    <div class="card m-2" style="width: 20rem;">
+        <div class="card-body">
+            <h5 class="card-title font-weight-bold">{{post.title}}</h5>
+            <p class="card-text">
+                {{post.blog|truncatechars:50}}
+                
+            </p>
+            <p class="small">
+                <span class="float-right">Created:{{post.created_on}}</span>
+            </p>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+<div>
+    <button class="bt btn-primary" style="align-items:center;"><a href="/create_post/new" style="color: #fff;font: size 15px; ;"> create a post</a></button>
+</div>
+
+    </div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
